@@ -13,30 +13,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Professional Resume Builder",
-  description: "Create and manage your professional resume with our easy-to-use resume builder. Perfect for job seekers and professionals.",
-  keywords: "resume, resume builder, CV, job application, professional resume, create resume, online resume builder",
+  title: "PixelBlock Resume",
+  description: "Create and manage your professional resume effortlessly with PixelBlock Resume. Perfect for job seekers and professionals.",
+  keywords: "resume, resume builder, CV, job application, PixelBlock Resume, create resume, online resume builder",
   authors: [{ name: "Milap Dave" }],
   viewport: "width=device-width, initial-scale=1",
   openGraph: {
-    title: "Professional Resume Builder",
-    description: "Create and manage your professional resume with our easy-to-use resume builder.",
+    title: "PixelBlock Resume",
+    description: "Create and manage your professional resume effortlessly with PixelBlock Resume.",
     url: "https://milapdave.com", // Replace with your actual URL
-    siteName: "Resume Builder",
+    siteName: "PixelBlock Resume",
     images: [
       {
         url: "https://milap.com/og-image.jpg", // Replace with your actual image URL
         width: 1200,
         height: 630,
-        alt: "Resume Builder",
+        alt: "PixelBlock Resume",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Professional Resume Builder",
-    description: "Create and manage your professional resume with our easy-to-use resume builder.",
+    title: "PixelBlock Resume",
+    description: "Create and manage your professional resume effortlessly with PixelBlock Resume.",
     images: "https://milap.com/twitter-image.jpg", // Replace with your actual image URL
   },
   icons: {

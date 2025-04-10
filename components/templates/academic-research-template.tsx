@@ -45,209 +45,264 @@ export default function AcademicResearchTemplate({ resumeData }: TemplateProps) 
   const { personalInfo, experience, education, skills } = resumeData || defaultData
 
   return (
-    <div className="font-serif bg-white dark:bg-gray-900 max-w-4xl mx-auto p-8">
-      <header className="text-center mb-8 pb-4 border-b-2 border-gray-300 dark:border-gray-700">
+    <div className="font-serif max-w-4xl mx-auto p-8 bg-white">
+      <header className="text-center mb-8">
         <h1
           contentEditable
           suppressContentEditableWarning
-          className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+          className="text-3xl font-bold text-gray-800 mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
         >
           {personalInfo.name}
         </h1>
         <p
           contentEditable
           suppressContentEditableWarning
-          className="text-xl text-gray-700 dark:text-gray-300 mb-4 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+          className="text-lg text-gray-600 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
         >
           {personalInfo.title}
         </p>
-
-        <div className="flex flex-wrap justify-center gap-x-6 text-sm text-gray-600 dark:text-gray-400">
+        <div className="mt-2 text-sm text-gray-600 flex flex-wrap justify-center gap-x-4">
           <span
             contentEditable
             suppressContentEditableWarning
-            className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+            className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
           >
             {personalInfo.email}
           </span>
           <span
             contentEditable
             suppressContentEditableWarning
-            className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+            className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
           >
             {personalInfo.phone}
           </span>
           <span
             contentEditable
             suppressContentEditableWarning
-            className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+            className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
           >
             {personalInfo.address}
           </span>
         </div>
       </header>
 
+      <section className="mb-6">
+        <h2 
+          contentEditable
+          suppressContentEditableWarning
+          className="text-xl font-bold text-gray-800 uppercase text-center mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+        >
+          Research Profile
+        </h2>
+        <div className="border-t border-b border-gray-300 py-4">
+          <p
+            contentEditable
+            suppressContentEditableWarning
+            className="text-gray-700 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+          >
+            {personalInfo.summary}
+          </p>
+        </div>
+      </section>
+
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Left column - Education & Skills */}
         <div className="md:col-span-1">
           <section className="mb-8">
-            <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-4 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700 pb-2">
-              Education
-            </h2>
-
-            {education.map((edu, index) => (
-              <div key={index} className="mb-4">
-                <h3
-                  contentEditable
-                  suppressContentEditableWarning
-                  className="font-bold text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
-                >
-                  {edu.degree}
-                </h3>
-                <p
-                  contentEditable
-                  suppressContentEditableWarning
-                  className="text-gray-700 dark:text-gray-300 italic mb-1 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
-                >
-                  {edu.institution}
-                </p>
-                <p
-                  contentEditable
-                  suppressContentEditableWarning
-                  className="text-sm text-gray-600 dark:text-gray-400 mb-1 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
-                >
-                  {edu.date}
-                </p>
-                <p
-                  contentEditable
-                  suppressContentEditableWarning
-                  className="text-sm text-gray-600 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
-                >
-                  {edu.description}
-                </p>
-              </div>
-            ))}
-          </section>
-
-          <section>
-            <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-4 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700 pb-2">
-              Research Skills
-            </h2>
-
-            <ul className="space-y-2">
-              {skills.map((skill, index) => (
-                <li key={index} className="flex justify-between items-center">
-                  <span
-                    contentEditable
-                    suppressContentEditableWarning
-                    className="text-gray-700 dark:text-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
-                  >
-                    {skill.name}
-                  </span>
-                  <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">{skill.level}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        </div>
-
-        {/* Right column - Research Profile & Experience */}
-        <div className="md:col-span-3">
-          <section className="mb-8">
-            <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-4 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700 pb-2">
-              Research Profile
-            </h2>
-
-            <p
+            <h2 
               contentEditable
               suppressContentEditableWarning
-              className="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+              className="text-xl font-bold text-gray-800 uppercase mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
             >
-              {personalInfo.summary}
-            </p>
-          </section>
-
-          <section>
-            <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-4 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700 pb-2">
-              Research Experience
+              Education
             </h2>
-
-            {experience.map((exp, index) => (
-              <div key={index} className="mb-6">
-                <div className="flex justify-between items-baseline flex-wrap gap-2 mb-1">
+            <div className="border-t border-gray-300 pt-4">
+              {education.map((edu, index) => (
+                <div key={index} className="mb-4">
                   <h3
                     contentEditable
                     suppressContentEditableWarning
-                    className="font-bold text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                    className="font-bold text-gray-800 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
                   >
-                    {exp.position}
+                    {edu.degree}
                   </h3>
-                  <span
+                  <p
                     contentEditable
                     suppressContentEditableWarning
-                    className="text-sm text-gray-600 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                    className="font-semibold text-gray-700 mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
                   >
-                    {exp.date}
-                  </span>
+                    {edu.institution}
+                  </p>
+                  <p
+                    contentEditable
+                    suppressContentEditableWarning
+                    className="text-gray-600 mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                  >
+                    {edu.date}
+                  </p>
+                  <p
+                    contentEditable
+                    suppressContentEditableWarning
+                    className="text-gray-700 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                  >
+                    {edu.description}
+                  </p>
                 </div>
-                <p
-                  contentEditable
-                  suppressContentEditableWarning
-                  className="text-gray-700 dark:text-gray-300 italic mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
-                >
-                  {exp.company}
-                </p>
-                <p
-                  contentEditable
-                  suppressContentEditableWarning
-                  className="text-gray-600 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
-                >
-                  {exp.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </section>
 
-          {/* Publications Section - Common in academic CVs */}
-          <section className="mt-8">
-            <h2 className="text-lg font-bold text-gray-800 dark:text-gray-200 mb-4 uppercase tracking-wider border-b border-gray-300 dark:border-gray-700 pb-2">
+          <section>
+            <h2 
+              contentEditable
+              suppressContentEditableWarning
+              className="text-xl font-bold text-gray-800 uppercase mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            >
+              Research Skills
+            </h2>
+            <div className="border-t border-gray-300 py-4">
+              <div className="flex flex-wrap gap-2">
+                {skills.map((skill, index) => (
+                  <span
+                    key={index}
+                    contentEditable
+                    suppressContentEditableWarning
+                    className="bg-gray-100 px-3 py-1 rounded-full text-gray-700 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200"
+                  >
+                    {`${skill.name} (${skill.level})`}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+        </div>
+
+        {/* Right column - Research Experience & Publications */}
+        <div className="md:col-span-3">
+          <section className="mb-6">
+            <h2 
+              contentEditable
+              suppressContentEditableWarning
+              className="text-xl font-bold text-gray-800 uppercase mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            >
+              Research Experience
+            </h2>
+            <div className="border-t border-gray-300 pt-4">
+              {experience.map((exp, index) => (
+                <div key={index} className="mb-4">
+                  <div className="flex justify-between items-baseline mb-1">
+                    <h3
+                      contentEditable
+                      suppressContentEditableWarning
+                      className="font-bold text-gray-800 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                    >
+                      {exp.position}
+                    </h3>
+                    <span
+                      contentEditable
+                      suppressContentEditableWarning
+                      className="text-gray-600 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                    >
+                      {exp.date}
+                    </span>
+                  </div>
+                  <p
+                    contentEditable
+                    suppressContentEditableWarning
+                    className="font-semibold text-gray-700 mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                  >
+                    {exp.company}
+                  </p>
+                  <p
+                    contentEditable
+                    suppressContentEditableWarning
+                    className="text-gray-700 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                  >
+                    {exp.description}
+                  </p>
+                  {index < experience.length - 1 && <hr className="my-4" />}
+                </div>
+              ))}
+            </div>
+          </section>
+
+          <section className="mb-6">
+            <h2 
+              contentEditable
+              suppressContentEditableWarning
+              className="text-xl font-bold text-gray-800 uppercase mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            >
               Selected Publications
             </h2>
-
-            <ul className="list-disc pl-5 space-y-2 text-gray-700 dark:text-gray-300">
-              <li
-                contentEditable
-                suppressContentEditableWarning
-                className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
-              >
-                Author, A., Author, B., & {personalInfo.name.split(",")[0]} (2023). Example research paper title.{" "}
-                <i>Journal of Important Research, 45</i>(2), 123-145.
-              </li>
-              <li
-                contentEditable
-                suppressContentEditableWarning
-                className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
-              >
-                {personalInfo.name.split(",")[0]}, Author, C., & Author, D. (2022). Another example research paper with
-                a longer title that spans multiple lines. <i>International Science Review, 12</i>(4), 78-92.
-              </li>
-              <li
-                contentEditable
-                suppressContentEditableWarning
-                className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
-              >
-                Author, E., {personalInfo.name.split(",")[0]}, & Author, F. (2021). Third example research paper title.{" "}
-                <i>Research Quarterly, 33</i>(1), 45-67.
-              </li>
-            </ul>
+            <div className="border-t border-gray-300 pt-4">
+              <ul className="list-disc pl-5 space-y-3 text-gray-700">
+                <li
+                  contentEditable
+                  suppressContentEditableWarning
+                  className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                >
+                  Author, A., Author, B., & {personalInfo.name.split(",")[0]} (2023). Example research paper title.{" "}
+                  <i>Journal of Important Research, 45</i>(2), 123-145.
+                </li>
+                <li
+                  contentEditable
+                  suppressContentEditableWarning
+                  className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                >
+                  {personalInfo.name.split(",")[0]}, Author, C., & Author, D. (2022). Another example research paper with
+                  a longer title that spans multiple lines. <i>International Science Review, 12</i>(4), 78-92.
+                </li>
+                <li
+                  contentEditable
+                  suppressContentEditableWarning
+                  className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                >
+                  Author, E., {personalInfo.name.split(",")[0]}, & Author, F. (2021). Third example research paper title.{" "}
+                  <i>Research Quarterly, 33</i>(1), 45-67.
+                </li>
+              </ul>
+            </div>
+          </section>
+          
+          <section className="mb-6">
+            <h2 
+              contentEditable
+              suppressContentEditableWarning
+              className="text-xl font-bold text-gray-800 uppercase mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            >
+              Research Grants
+            </h2>
+            <div className="border-t border-gray-300 pt-4">
+              <ul className="space-y-3">
+                <li
+                  contentEditable
+                  suppressContentEditableWarning
+                  className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                >
+                  <span className="font-bold">National Science Foundation Grant</span> - &quot;Investigation of Genetic Markers in Cancer Development&quot; (2022-2025) - $750,000
+                </li>
+                <li
+                  contentEditable
+                  suppressContentEditableWarning
+                  className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                >
+                  <span className="font-bold">University Research Fund</span> - &quot;Novel Approaches to Cancer Detection&quot; (2020-2022) - $250,000
+                </li>
+              </ul>
+            </div>
           </section>
         </div>
       </div>
 
-      <footer className="mt-8 pt-6 border-t border-gray-300 dark:border-gray-700 text-center text-sm text-gray-500 dark:text-gray-400">
-        <p>Curriculum Vitae - Last Updated: March 2025</p>
+      <footer className="mt-8 pt-6 border-t border-gray-300 text-center text-sm text-gray-500">
+        <p 
+          contentEditable
+          suppressContentEditableWarning
+          className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+        >
+          Curriculum Vitae - Last Updated: April 2025
+        </p>
       </footer>
     </div>
   )
 }
-

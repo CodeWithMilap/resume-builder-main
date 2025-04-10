@@ -1,14 +1,15 @@
 import { Template } from './types'
 
 export const templates: Template[] = [
-  // {
-  //   id: 'academic-research',
-  //   name: 'Academic Research Template',
-  //   description: 'A template designed for academic research professionals.',
-  //   category: 'academic',
-  //   featured: false,
-  //   component: 'AcademicResearchTemplate',
-  // },
+  {
+    id: 'academic-research',
+    name: 'Academic Research Template',
+    description: 'A template designed for academic research professionals.',
+    category: 'academic',
+    featured: false,
+    component: 'AcademicResearchTemplate',  
+    previewImage: '/templates/academic-research-template.jpg',
+  },
   // {
   //   id: 'business-corporate',
   //   name: 'Business Corporate Template',
@@ -24,6 +25,7 @@ export const templates: Template[] = [
     category: 'classic',
     featured: false,
     component: 'ClassicTemplate',
+    previewImage: '/templates/classic-template.jpg',
   },
   // {
   //   id: 'compact',
@@ -120,6 +122,7 @@ export const templates: Template[] = [
     category: 'minimal',
     featured: true,
     component: 'MinimalTemplate',
+    previewImage: '/templates/minimal-template.jpg',
   },
   // {
   //   id: 'modern-split',
@@ -136,6 +139,7 @@ export const templates: Template[] = [
     category: 'modern',
     featured: true,
     component: 'ModernTemplate',
+    previewImage: '/templates/modern-template.jpg',
   },
   // {
   //   id: 'professional',

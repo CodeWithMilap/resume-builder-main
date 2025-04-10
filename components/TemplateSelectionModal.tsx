@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import { TemplateCategory, TEMPLATE_CATEGORIES } from "@/lib/types";
 import { templates, getTemplatesByCategory } from "@/lib/template-data";
+import Button from './PixelBlock/Button';
 
 interface TemplateSelectionModalProps {
   showTemplateModal: boolean;
@@ -42,7 +43,7 @@ export default function TemplateSelectionModal({
                 your perfect resume
               </p>
             </div>
-            <button
+            <Button
               onClick={() => setShowTemplateModal(false)}
               className="p-2 rounded-lg hover:bg-blue-600/50 text-white transition-colors"
             >
@@ -60,7 +61,7 @@ export default function TemplateSelectionModal({
                 <line x1="18" y1="6" x2="6" y2="18"></line>
                 <line x1="6" y1="6" x2="18" y2="18"></line>
               </svg>
-            </button>
+            </Button>
           </div>
 
           {/* Main content area with sidebar layout */}
@@ -116,7 +117,7 @@ export default function TemplateSelectionModal({
 
               {/* Templates grid */}
               <div className="flex-1 overflow-y-auto p-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
                   {filteredTemplates.map((template) => (
                     <div
                       key={template.id}
@@ -131,9 +132,10 @@ export default function TemplateSelectionModal({
                       }}
                     >
                       {/* Template preview */}
+                      {template.previewImage &&
                       <div className="relative aspect-[3/4] bg-white overflow-hidden">
                         <Image
-                          src="https://via.placeholder.com/300x400"
+                          src={template.previewImage}
                           alt={`${template.name} preview`}
                           layout="responsive"
                           width={300}
@@ -141,21 +143,21 @@ export default function TemplateSelectionModal({
                           className="object-cover"
                         />
                       </div>
-
+                     }
                       {/* Template info */}
                       <div className="p-4 bg-white border-t">
                         <div className="flex items-start justify-between gap-4">
                           <div>
-                            <h3 className="font-semibold text-gray-900">
+                            <h3 className="font-semibold text-sm text-gray-900">
                               {template.name}
                             </h3>
-                            <p className="text-sm text-gray-500 mt-1 line-clamp-2">
+                            <p className="text-xs text-gray-500 mt-1 line-clamp-2">
                               {template.description}
                             </p>
                           </div>
-                          <span className="shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 capitalize">
+                          {/* <span className="shrink-0 inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-50 text-blue-700 capitalize">
                             {template.category}
-                          </span>
+                          </span> */}
                         </div>
                       </div>
                     </div>

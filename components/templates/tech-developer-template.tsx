@@ -106,7 +106,7 @@ export default function TechDeveloperTemplate({ resumeData }: TemplateProps) {
             </h2>
             <div className="space-y-2 font-mono text-sm">
               <p className="flex">
-                <span className="text-purple-600 dark:text-purple-400 mr-2">"email":</span>
+                <span className="text-purple-600 dark:text-purple-400 mr-2">email:</span>
                 <span
                   contentEditable
                   suppressContentEditableWarning
@@ -117,7 +117,7 @@ export default function TechDeveloperTemplate({ resumeData }: TemplateProps) {
                 <span>,</span>
               </p>
               <p className="flex">
-                <span className="text-purple-600 dark:text-purple-400 mr-2">"phone":</span>
+                <span className="text-purple-600 dark:text-purple-400 mr-2">phone:</span>
                 <span
                   contentEditable
                   suppressContentEditableWarning
@@ -128,7 +128,7 @@ export default function TechDeveloperTemplate({ resumeData }: TemplateProps) {
                 <span>,</span>
               </p>
               <p className="flex">
-                <span className="text-purple-600 dark:text-purple-400 mr-2">"location":</span>
+                <span className="text-purple-600 dark:text-purple-400 mr-2">location:</span>
                 <span
                   contentEditable
                   suppressContentEditableWarning

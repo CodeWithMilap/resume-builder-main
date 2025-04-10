@@ -311,7 +311,7 @@ export default function ExecutiveLeadershipTemplate({ resumeData }: TemplateProp
 
       <footer className="bg-gray-900 dark:bg-black text-white p-6 text-center">
         <p className="text-sm text-gray-400">
-          "Leadership is the capacity to translate vision into reality." —Warren Bennis
+          {`"Leadership is the capacity to translate vision into reality." —Warren Bennis`}
         </p>
       </footer>
     </div>

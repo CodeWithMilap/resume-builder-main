@@ -351,7 +351,7 @@ export default function StartupEntrepreneurialTemplate({ resumeData }: TemplateP
       </div>
 
       <footer className="bg-gradient-to-r from-purple-600 to-blue-500 dark:from-purple-800 dark:to-blue-700 p-6 text-white text-center">
-        <p className="text-sm">"The best way to predict the future is to create it."</p>
+        <p className="text-sm">{`"The best way to predict the future is to create it."`}</p>
       </footer>
     </div>
   )

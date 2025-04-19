@@ -53,14 +53,14 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
             <h1
               contentEditable
               suppressContentEditableWarning
-              className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+              className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
             >
               {personalInfo.name}
             </h1>
             <p
               contentEditable
               suppressContentEditableWarning
-              className="text-xl text-blue-700 dark:text-blue-400 font-medium mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+              className="text-xl text-blue-700 dark:text-blue-400 font-medium mb-2 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
             >
               {personalInfo.title}
             </p>
@@ -70,7 +70,7 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
             <p
               contentEditable
               suppressContentEditableWarning
-              className="text-gray-700 dark:text-gray-300 flex items-center justify-end focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+              className="text-gray-700 dark:text-gray-300 flex items-center justify-end focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
             >
               <svg
                 className="w-4 h-4 ml-auto mr-2"
@@ -91,7 +91,7 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
             <p
               contentEditable
               suppressContentEditableWarning
-              className="text-gray-700 dark:text-gray-300 flex items-center justify-end focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+              className="text-gray-700 dark:text-gray-300 flex items-center justify-end focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
             >
               <svg
                 className="w-4 h-4 ml-auto mr-2"
@@ -112,7 +112,7 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
             <p
               contentEditable
               suppressContentEditableWarning
-              className="text-gray-700 dark:text-gray-300 flex items-center justify-end focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+              className="text-gray-700 dark:text-gray-300 flex items-center justify-end focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
             >
               <svg
                 className="w-4 h-4 ml-auto mr-2"
@@ -143,13 +143,17 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
       <div className="p-8">
         {/* Executive Summary */}
         <section className="mb-8">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 uppercase tracking-wider border-b-2 border-gray-200 dark:border-gray-700 pb-2">
+          <h2 
+            contentEditable
+            suppressContentEditableWarning
+            className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 uppercase tracking-wider border-b-2 border-gray-200 dark:border-gray-700 pb-2 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+          >
             Executive Summary
           </h2>
           <p
             contentEditable
             suppressContentEditableWarning
-            className="text-gray-700 dark:text-gray-300 leading-relaxed focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+            className="text-gray-700 dark:text-gray-300 leading-relaxed focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
           >
             {personalInfo.summary}
           </p>
@@ -157,7 +161,11 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
 
         {/* Professional Experience */}
         <section className="mb-8">
-          <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 uppercase tracking-wider border-b-2 border-gray-200 dark:border-gray-700 pb-2">
+          <h2 
+            contentEditable
+            suppressContentEditableWarning
+            className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 uppercase tracking-wider border-b-2 border-gray-200 dark:border-gray-700 pb-2 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+          >
             Professional Experience
           </h2>
 
@@ -168,14 +176,14 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
                   <h3
                     contentEditable
                     suppressContentEditableWarning
-                    className="text-lg font-bold text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                    className="text-lg font-bold text-gray-800 dark:text-gray-200 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
                   >
                     {exp.position}
                   </h3>
                   <p
                     contentEditable
                     suppressContentEditableWarning
-                    className="text-blue-700 dark:text-blue-400 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                    className="text-blue-700 dark:text-blue-400 font-medium focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
                   >
                     {exp.company}
                   </p>
@@ -183,7 +191,7 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
                 <span
                   contentEditable
                   suppressContentEditableWarning
-                  className="text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="text-sm text-gray-600 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 px-3 py-1 rounded-full focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200"
                 >
                   {exp.date}
                 </span>
@@ -191,26 +199,32 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
               <p
                 contentEditable
                 suppressContentEditableWarning
-                className="text-gray-600 dark:text-gray-400 mt-2 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                className="text-gray-600 dark:text-gray-400 mt-2 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
               >
                 {exp.description}
               </p>
 
               {/* Key Achievements - Common in business resumes */}
               <div className="mt-3 pl-4 border-l-2 border-blue-200 dark:border-blue-800">
-                <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Key Achievements:</p>
+                <p 
+                  contentEditable
+                  suppressContentEditableWarning
+                  className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-2 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                >
+                  Key Achievements:
+                </p>
                 <ul className="list-disc pl-5 text-sm text-gray-600 dark:text-gray-400 space-y-1">
                   <li
                     contentEditable
                     suppressContentEditableWarning
-                    className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                    className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
                   >
                     Increased department revenue by 35% through strategic initiatives and process optimization.
                   </li>
                   <li
                     contentEditable
                     suppressContentEditableWarning
-                    className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                    className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
                   >
                     Led cross-functional team of 25+ professionals to successfully complete a major corporate
                     restructuring.
@@ -218,7 +232,7 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
                   <li
                     contentEditable
                     suppressContentEditableWarning
-                    className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                    className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
                   >
                     Negotiated key partnerships resulting in $2.5M in additional annual revenue.
                   </li>
@@ -231,7 +245,11 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Education */}
           <section>
-            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 uppercase tracking-wider border-b-2 border-gray-200 dark:border-gray-700 pb-2">
+            <h2 
+              contentEditable
+              suppressContentEditableWarning
+              className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 uppercase tracking-wider border-b-2 border-gray-200 dark:border-gray-700 pb-2 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            >
               Education
             </h2>
 
@@ -241,14 +259,14 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
                   <h3
                     contentEditable
                     suppressContentEditableWarning
-                    className="font-bold text-gray-800 dark:text-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                    className="font-bold text-gray-800 dark:text-gray-200 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
                   >
                     {edu.degree}
                   </h3>
                   <span
                     contentEditable
                     suppressContentEditableWarning
-                    className="text-sm text-gray-600 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                    className="text-sm text-gray-600 dark:text-gray-400 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
                   >
                     {edu.date}
                   </span>
@@ -256,14 +274,14 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
                 <p
                   contentEditable
                   suppressContentEditableWarning
-                  className="text-blue-700 dark:text-blue-400 mb-1 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                  className="text-blue-700 dark:text-blue-400 mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
                 >
                   {edu.institution}
                 </p>
                 <p
                   contentEditable
                   suppressContentEditableWarning
-                  className="text-sm text-gray-600 dark:text-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                  className="text-sm text-gray-600 dark:text-gray-400 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
                 >
                   {edu.description}
                 </p>
@@ -273,7 +291,11 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
 
           {/* Skills & Expertise */}
           <section>
-            <h2 className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 uppercase tracking-wider border-b-2 border-gray-200 dark:border-gray-700 pb-2">
+            <h2 
+              contentEditable
+              suppressContentEditableWarning
+              className="text-xl font-bold text-gray-900 dark:text-gray-100 mb-4 uppercase tracking-wider border-b-2 border-gray-200 dark:border-gray-700 pb-2 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            >
               Core Competencies
             </h2>
 
@@ -284,12 +306,18 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
                   <span
                     contentEditable
                     suppressContentEditableWarning
-                    className="text-gray-800 dark:text-gray-200 font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 rounded px-1"
+                    className="text-gray-800 dark:text-gray-200 font-medium focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
                   >
                     {skill.name}
                   </span>
                   <div className="ml-auto">
-                    <div className="text-xs text-blue-700 dark:text-blue-400 font-medium">{skill.level}</div>
+                    <div 
+                      contentEditable
+                      suppressContentEditableWarning
+                      className="text-xs text-blue-700 dark:text-blue-400 font-medium focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+                    >
+                      {skill.level}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -297,18 +325,40 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
 
             {/* Additional business-specific sections */}
             <div className="mt-6">
-              <h3 className="font-bold text-gray-800 dark:text-gray-200 mb-2">Industries</h3>
+              <h3 
+                contentEditable
+                suppressContentEditableWarning
+                className="font-bold text-gray-800 dark:text-gray-200 mb-2 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+              >
+                Industries
+              </h3>
               <div className="flex flex-wrap gap-2">
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full">
+                <span 
+                  contentEditable
+                  suppressContentEditableWarning
+                  className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200"
+                >
                   Finance
                 </span>
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full">
+                <span 
+                  contentEditable
+                  suppressContentEditableWarning
+                  className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200"
+                >
                   Technology
                 </span>
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full">
+                <span 
+                  contentEditable
+                  suppressContentEditableWarning
+                  className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200"
+                >
                   Consulting
                 </span>
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full">
+                <span 
+                  contentEditable
+                  suppressContentEditableWarning
+                  className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 text-sm rounded-full focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200"
+                >
                   Healthcare
                 </span>
               </div>
@@ -318,9 +368,14 @@ export default function BusinessCorporateTemplate({ resumeData }: TemplateProps)
       </div>
 
       <footer className="bg-gray-100 dark:bg-gray-800 p-4 text-center text-sm text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
-        <p>References and additional information available upon request</p>
+        <p 
+          contentEditable
+          suppressContentEditableWarning
+          className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+        >
+          References and additional information available upon request
+        </p>
       </footer>
     </div>
   )
 }
-

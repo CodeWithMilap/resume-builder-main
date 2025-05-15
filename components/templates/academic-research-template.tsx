@@ -1,308 +1,281 @@
-"use client"
+"use client";
 
-import type { ResumeData } from "@/lib/types"
+import { ResumeData } from "@/lib/types";
 
 interface TemplateProps {
-  resumeData?: ResumeData
+  resumeData: ResumeData;
 }
 
-export default function AcademicResearchTemplate({ resumeData }: TemplateProps) {
-  // Default data
-  const defaultData = {
-    personalInfo: {
-      name: "Your Name, Ph.D.",
-      title: "Research Scientist",
-      email: "researcher@university.edu",
-      phone: "(123) 456-7890",
-      address: "Cambridge, MA",
-      summary:
-        "Dedicated researcher with expertise in molecular biology and genetics, with a focus on cancer research.",
-    },
-    experience: [
-      {
-        company: "University Research Lab",
-        position: "Principal Investigator",
-        date: "2018 - Present",
-        description: "Leading research on genetic markers for early cancer detection.",
-      },
-    ],
-    education: [
-      {
-        institution: "Harvard University",
-        degree: "Ph.D. in Molecular Biology",
-        date: "2012 - 2018",
-        description: "Dissertation on genetic factors in cancer development.",
-      },
-    ],
-    skills: [
-      { name: "Genomic Analysis", level: "Expert" },
-      { name: "Laboratory Techniques", level: "Expert" },
-      { name: "Research Methodology", level: "Expert" },
-    ],
-  }
-
-  // Use provided data or default
-  const { personalInfo, experience, education, skills } = resumeData || defaultData
+export default function MilapDaveResumeTemplate({ resumeData }: TemplateProps) {
+  const { personalInfo, experience, education, skills, links } = resumeData;
 
   return (
-    <div className="font-serif max-w-4xl mx-auto p-8 bg-white">
+    <div className="font-[Times_New_Roman] max-w-4xl mx-auto p-8 bg-white text-gray-800">
       <header className="text-center mb-8">
         <h1
           contentEditable
           suppressContentEditableWarning
-          className="text-3xl font-bold text-gray-800 mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+          className="text-4xl font-bold text-[#1f2937] mb-2 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
         >
           {personalInfo.name}
         </h1>
         <p
           contentEditable
           suppressContentEditableWarning
-          className="text-lg text-gray-600 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+          className="text-xl text-[#4b5563] mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
         >
           {personalInfo.title}
         </p>
-        <div className="mt-2 text-sm text-gray-600 flex flex-wrap justify-center gap-x-4">
+        <div className="mt-2 text-sm text-[#4b5563]">
           <span
             contentEditable
             suppressContentEditableWarning
-            className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            className="mr-4 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
           >
             {personalInfo.email}
           </span>
           <span
             contentEditable
             suppressContentEditableWarning
-            className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            className="mr-4 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
           >
             {personalInfo.phone}
           </span>
           <span
             contentEditable
             suppressContentEditableWarning
-            className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            className="mr-4 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
           >
             {personalInfo.address}
           </span>
+          {personalInfo.linkedin && (
+            <a
+              href={personalInfo.linkedin}
+              contentEditable
+              suppressContentEditableWarning
+              className="text-[#2563eb] hover:underline mr-4 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            >
+              LinkedIn
+            </a>
+          )}
+          {links?.portfolio && (
+            <a
+              href={links.portfolio}
+              contentEditable
+              suppressContentEditableWarning
+              className="text-[#2563eb] hover:underline mr-4 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            >
+              Portfolio
+            </a>
+          )}
+          {links?.github && (
+            <a
+              href={links.github}
+              contentEditable
+              suppressContentEditableWarning
+              className="text-[#2563eb] hover:underline focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            >
+              GitHub
+            </a>
+          )}
         </div>
       </header>
 
-      <section className="mb-6">
-        <h2 
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold text-[#1f2937] mb-3 border-b-2 border-[#d1d5db] pb-2">Professional Summary</h2>
+        <p
           contentEditable
           suppressContentEditableWarning
-          className="text-xl font-bold text-gray-800 uppercase text-center mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+          className="text-[#374151] leading-relaxed focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
         >
-          Research Profile
-        </h2>
-        <div className="border-t border-b border-gray-300 py-4">
-          <p
-            contentEditable
-            suppressContentEditableWarning
-            className="text-gray-700 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-          >
-            {personalInfo.summary}
-          </p>
-        </div>
+          {personalInfo.summary}
+        </p>
       </section>
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Left column - Education & Skills */}
-        <div className="md:col-span-1">
-          <section className="mb-8">
-            <h2 
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold text-[#1f2937] mb-3 border-b-2 border-[#d1d5db] pb-2">Professional Experience</h2>
+        {experience.map((exp, index) => (
+          <div key={index} className="mb-6">
+            <div className="mb-1">
+              <h3
+                contentEditable
+                suppressContentEditableWarning
+                className="inline text-lg font-semibold text-[#1f2937] focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+              >
+                {exp.title}
+              </h3>
+              <span
+                contentEditable
+                suppressContentEditableWarning
+                className="float-right text-sm text-[#6b7280] focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+              >
+                {exp.period}
+              </span>
+            </div>
+            <p
               contentEditable
               suppressContentEditableWarning
-              className="text-xl font-bold text-gray-800 uppercase mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+              className="font-medium text-[#374151] mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
             >
-              Education
-            </h2>
-            <div className="border-t border-gray-300 pt-4">
-              {education.map((edu, index) => (
-                <div key={index} className="mb-4">
-                  <h3
-                    contentEditable
-                    suppressContentEditableWarning
-                    className="font-bold text-gray-800 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                  >
-                    {edu.degree}
-                  </h3>
-                  <p
-                    contentEditable
-                    suppressContentEditableWarning
-                    className="font-semibold text-gray-700 mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                  >
-                    {edu.institution}
-                  </p>
-                  <p
-                    contentEditable
-                    suppressContentEditableWarning
-                    className="text-gray-600 mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                  >
-                    {edu.date}
-                  </p>
-                  <p
-                    contentEditable
-                    suppressContentEditableWarning
-                    className="text-gray-700 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                  >
-                    {edu.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
+              {exp.company}
+            </p>
+            {exp.position && (
+              <p
+                contentEditable
+                suppressContentEditableWarning
+                className="text-[#6b7280] italic mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+              >
+                {exp.position}
+              </p>
+            )}
+            <p
+              contentEditable
+              suppressContentEditableWarning
+              className="text-[#374151] mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            >
+              {exp.date}
+            </p>
+            <p
+              contentEditable
+              suppressContentEditableWarning
+              className="text-[#374151] focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            >
+              {exp.description}
+            </p>
+          </div>
+        ))}
+      </section>
 
-          <section>
-            <h2 
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold text-[#1f2937] mb-3 border-b-2 border-[#d1d5db] pb-2">Education</h2>
+        {education.map((edu, index) => (
+          <div key={index} className="mb-4">
+            <div className="mb-1">
+              <h3
+                contentEditable
+                suppressContentEditableWarning
+                className="inline text-lg font-semibold text-[#1f2937] focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+              >
+                {edu.degree}
+              </h3>
+              <span
+                contentEditable
+                suppressContentEditableWarning
+                className="float-right text-sm text-[#6b7280] focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+              >
+                {edu.date}
+              </span>
+            </div>
+            <p
               contentEditable
               suppressContentEditableWarning
-              className="text-xl font-bold text-gray-800 uppercase mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+              className="font-medium text-[#374151] mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
             >
-              Research Skills
-            </h2>
-            <div className="border-t border-gray-300 py-4">
-              <div className="flex flex-wrap gap-2">
-                {skills.map((skill, index) => (
-                  <span
-                    key={index}
-                    contentEditable
-                    suppressContentEditableWarning
-                    className="bg-gray-100 px-3 py-1 rounded-full text-gray-700 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200"
-                  >
-                    {`${skill.name} (${skill.level})`}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </section>
+              {edu.institution}
+            </p>
+            <p
+              contentEditable
+              suppressContentEditableWarning
+              className="text-[#374151] focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
+            >
+              {edu.description}
+            </p>
+          </div>
+        ))}
+      </section>
+
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold text-[#1f2937] mb-3 border-b-2 border-[#d1d5db] pb-2">Skills</h2>
+        <div className="flex flex-wrap gap-2">
+          {skills.map((skill, index) => (
+            <span
+              key={index}
+              contentEditable
+              suppressContentEditableWarning
+              className="bg-[#dbeafe] text-[#1e40af] px-3 py-1 text-sm font-medium focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200"
+            >
+              {`${skill.name} (${skill.level})`}
+            </span>
+          ))}
         </div>
-
-        {/* Right column - Research Experience & Publications */}
-        <div className="md:col-span-3">
-          <section className="mb-6">
-            <h2 
-              contentEditable
-              suppressContentEditableWarning
-              className="text-xl font-bold text-gray-800 uppercase mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-            >
-              Research Experience
-            </h2>
-            <div className="border-t border-gray-300 pt-4">
-              {experience.map((exp, index) => (
-                <div key={index} className="mb-4">
-                  <div className="flex justify-between items-baseline mb-1">
-                    <h3
-                      contentEditable
-                      suppressContentEditableWarning
-                      className="font-bold text-gray-800 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                    >
-                      {exp.position}
-                    </h3>
-                    <span
-                      contentEditable
-                      suppressContentEditableWarning
-                      className="text-gray-600 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                    >
-                      {exp.date}
-                    </span>
-                  </div>
-                  <p
-                    contentEditable
-                    suppressContentEditableWarning
-                    className="font-semibold text-gray-700 mb-1 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                  >
-                    {exp.company}
-                  </p>
-                  <p
-                    contentEditable
-                    suppressContentEditableWarning
-                    className="text-gray-700 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                  >
-                    {exp.description}
-                  </p>
-                  {index < experience.length - 1 && <hr className="my-4" />}
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="mb-6">
-            <h2 
-              contentEditable
-              suppressContentEditableWarning
-              className="text-xl font-bold text-gray-800 uppercase mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-            >
-              Selected Publications
-            </h2>
-            <div className="border-t border-gray-300 pt-4">
-              <ul className="list-disc pl-5 space-y-3 text-gray-700">
-                <li
-                  contentEditable
-                  suppressContentEditableWarning
-                  className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                >
-                  Author, A., Author, B., & {personalInfo.name.split(",")[0]} (2023). Example research paper title.{" "}
-                  <i>Journal of Important Research, 45</i>(2), 123-145.
-                </li>
-                <li
-                  contentEditable
-                  suppressContentEditableWarning
-                  className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                >
-                  {personalInfo.name.split(",")[0]}, Author, C., & Author, D. (2022). Another example research paper with
-                  a longer title that spans multiple lines. <i>International Science Review, 12</i>(4), 78-92.
-                </li>
-                <li
-                  contentEditable
-                  suppressContentEditableWarning
-                  className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                >
-                  Author, E., {personalInfo.name.split(",")[0]}, & Author, F. (2021). Third example research paper title.{" "}
-                  <i>Research Quarterly, 33</i>(1), 45-67.
-                </li>
-              </ul>
-            </div>
-          </section>
-          
-          <section className="mb-6">
-            <h2 
-              contentEditable
-              suppressContentEditableWarning
-              className="text-xl font-bold text-gray-800 uppercase mb-3 focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-            >
-              Research Grants
-            </h2>
-            <div className="border-t border-gray-300 pt-4">
-              <ul className="space-y-3">
-                <li
-                  contentEditable
-                  suppressContentEditableWarning
-                  className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                >
-                  <span className="font-bold">National Science Foundation Grant</span> - &quot;Investigation of Genetic Markers in Cancer Development&quot; (2022-2025) - $750,000
-                </li>
-                <li
-                  contentEditable
-                  suppressContentEditableWarning
-                  className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-                >
-                  <span className="font-bold">University Research Fund</span> - &quot;Novel Approaches to Cancer Detection&quot; (2020-2022) - $250,000
-                </li>
-              </ul>
-            </div>
-          </section>
-        </div>
-      </div>
-
-      <footer className="mt-8 pt-6 border-t border-gray-300 text-center text-sm text-gray-500">
-        <p 
-          contentEditable
-          suppressContentEditableWarning
-          className="focus:outline-none focus:bg-blue-50 focus:ring-1 focus:ring-blue-200 rounded px-1"
-        >
-          Curriculum Vitae - Last Updated: April 2025
-        </p>
-      </footer>
+      </section>
     </div>
-  )
+  );
 }
+
+// Example usage with Milap Dave's data
+export const milapDaveResumeData: ResumeData = {
+  personalInfo: {
+    name: "Milap Dave",
+    title: "Front End Engineer",
+    email: "dave.milap3@gmail.com",
+    phone: "9013706142",
+    address: "Rajkot, Gujarat, India", // Inferred from experience location
+    summary:
+      "Experienced Frontend Developer with a strong background in building websites and web applications. Proficient in JavaScript, HTML5, CSS, and skilled in modern frameworks including ReactJS, jQuery, Bootstrap, Tailwind CSS, and GatsbyJS. Expertise in CMS platforms such as WordPress and proficient in using tools like Git, Sass, Gulp, Webpack, and Adobe Photoshop. Strong understanding of AJAX and responsive design techniques to create dynamic and user-friendly interfaces. Key Achievement: Developed high-performance websites using Next.js and GatsbyJS, resulting in significant improvements in site speed, user experience, and SEO.",
+    linkedin: "https://www.linkedin.com/in/milapdav"
+  },
+  education: [
+    {
+      institution: "Dr. V.R.Godhaniya Collage",
+      degree: "M.Sc (IT & CA)",
+      date: "01/2012 - 01/2013",
+      description: "Specialized in Information Technology."
+    },
+    {
+      institution: "K.K.Parekh",
+      degree: "Bachelor of Commerce (BCom)",
+      date: "01/2010 - 01/2011",
+      description: "Focused on Computer Science."
+    }
+  ],
+  experience: [
+    {
+      company: "Soft 'n' Web",
+      title: "Front End Developer",
+      date: "04/2016 - Present",
+      period: "04/2016 - Present",
+      description:
+        "Developed and maintained web applications using JavaScript, ReactJS, and Tailwind CSS. Collaborated with teams to implement responsive designs and optimize performance."
+    },
+    {
+      company: "Epixelinfoway",
+      title: "Front End Developer",
+      date: "03/2015 - 02/2016",
+      period: "03/2015 - 02/2016",
+      description:
+        "Built user-friendly interfaces with HTML5, CSS, and jQuery. Integrated WordPress CMS for dynamic content management."
+    },
+    {
+      company: "Digitize-info",
+      title: "Front End Developer",
+      date: "02/2014 - 02/2015",
+      period: "02/2014 - 02/2015",
+      description:
+        "Designed and developed websites using Bootstrap and JavaScript, focusing on cross-browser compatibility and SEO optimization."
+    }
+  ],
+  skills: [
+    { name: "JavaScript", level: "Expert" },
+    { name: "React.js", level: "Advanced" },
+    { name: "Next.js", level: "Advanced" },
+    { name: "Tailwind CSS", level: "Advanced" },
+    { name: "Bootstrap", level: "Advanced" },
+    { name: "HTML5", level: "Expert" },
+    { name: "CSS", level: "Expert" },
+    { name: "WordPress", level: "Advanced" },
+    { name: "Git", level: "Advanced" },
+    { name: "Sass", level: "Advanced" },
+    { name: "Gulp", level: "Intermediate" },
+    { name: "Webpack", level: "Intermediate" },
+    { name: "Adobe Photoshop", level: "Intermediate" },
+    { name: "MySQL", level: "Intermediate" },
+    { name: "PHP", level: "Intermediate" }
+    // Note: Levels are assumed; adjust based on your expertise
+  ],
+  links: {
+    linkedin: "https://www.linkedin.com/in/milapdav",
+    portfolio: "https://milapdave.com", // Replace with your actual portfolio URL
+    github: "https://github.com/milapdave" // Replace with your actual GitHub URL
+  }
+};
